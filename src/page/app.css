@@ -1,0 +1,53 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Structure du page */
+.title {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 25px;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.nav-gauche {
+    width: 100px;
+    height: 100%;
+    background-color: #BAD7E9;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.nav-droite {
+    height: 100%;
+    width: 100%;
+    background-color: #BAD7E9;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+/* Style du contenue */
+
+.ul-nav {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.link {
+    text-decoration: none;
+    color: white;
+}

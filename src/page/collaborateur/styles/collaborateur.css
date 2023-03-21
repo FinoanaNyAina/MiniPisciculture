@@ -1,0 +1,31 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.page-collabo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.title_collabo {
+    font-size: 18px;
+    font-weight: bolder;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.tr-collabo {
+    border-bottom: 1px solid #002a5b4d;
+}
+
+td {
+    padding: 5px;
+}

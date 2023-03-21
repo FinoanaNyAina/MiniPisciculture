@@ -1,0 +1,48 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.body-voiture {
+    display: flex;
+    gap: 20px;
+}
+
+table,
+tr,
+th {
+    width: 60vw;
+    border: #002a5b4d;
+    border-collapse: collapse;
+    padding: 5px;
+
+}
+
+
+th {
+    background-color: #d7eaff;
+    border-radius: 5px;
+}
+
+td {
+    text-align: start;
+    border-bottom: #002a5b4d;
+    padding-left: 10px;
+}
+
+.table-contenue {
+    border-bottom: 1px solid #002a5b4d;
+}
+
+legend {
+    font-size: 17px;
+    margin-left: 25px;
+    font-weight: bolder;
+}
+
+.historiqueP {
+    padding: 20px;
+}

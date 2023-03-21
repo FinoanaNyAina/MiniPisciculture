@@ -2,13 +2,12 @@ import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import Home from './home/components/Home';
 import Voiture from './auto/components/Voiture';
+import Collaborateur from './collaborateur/components/Collaborateur';
 import './app.css';
 import Car from '../images/Car.png';
 import Fiche from '../images/Configuration.png';
 import User from '../images/user.png';
 import Liste from '../images/clipboard.png';
-
-
 
 function App() {
 
@@ -30,17 +29,18 @@ function App() {
                         <div>
                             <nav className='nav'>
                                 <ul className='ul-nav'>
-                                    <li className='li-nav1'><Link to="/" className='link'> <img src={User} className='logo' alt='logo cehicule' /></Link></li>
+                                    <li className='li-nav1'><Link to="/voiture" className='link'><img src={Liste} className='logo' alt='logo cehicule' /></Link></li>
                                 </ul>
                                 <ul className='ul-nav'>
-                                    <li className='li-nav2'><Link to="/" className='link'> <img src={Fiche} className='logo' alt='logo cehicule' /></Link></li>
+                                    <li className='li-nav2'><Link to="/collabo" className='link'> <img src={User} className='logo' alt='logo cehicule' /></Link></li>
                                 </ul>
                                 <ul className='ul-nav'>
-                                    <li className='li-nav3'><Link to="/" className='link'> <img src={Car} className='logo' alt='logo cehicule' /></Link></li>
+                                    <li className='li-nav3'><Link to="/" className='link'> <img src={Fiche} className='logo' alt='logo cehicule' /></Link></li>
                                 </ul>
                                 <ul className='ul-nav'>
-                                    <li className='li-nav4'><Link to="/voiture" className='link'><img src={Liste} className='logo' alt='logo cehicule' /></Link></li>
+                                    <li className='li-nav4'><Link to="/" className='link'> <img src={Car} className='logo' alt='logo cehicule' /></Link></li>
                                 </ul>
+
 
                             </nav>
                         </div>
@@ -52,6 +52,7 @@ function App() {
                         <Routes>
                             <Route path='/' element={<Home />} ></Route>
                             <Route path='/voiture' element={<Voiture />}></Route>
+                            <Route path='/collabo' element={<Collaborateur />}></Route>
                         </Routes>
 
                     </div>

@@ -11,6 +11,8 @@
     gap: 20px;
 }
 
+/* ****************************TABLE********************** */
+
 table,
 tr,
 th {
@@ -21,10 +23,8 @@ th {
 
 }
 
-
 th {
     background-color: #d7eaff;
-    border-radius: 5px;
 }
 
 td {
@@ -33,8 +33,19 @@ td {
     padding-left: 10px;
 }
 
+.table-contenue:hover {
+    background-color: #002a5b4d;
+}
+
 .table-contenue {
     border-bottom: 1px solid #002a5b4d;
+    cursor: pointer;
+}
+
+/* **********************Bloc Modification *************** */
+fieldset {
+    border: 1px solid #002a5b4d;
+    border-radius: 6px;
 }
 
 legend {
@@ -45,4 +56,22 @@ legend {
 
 .historiqueP {
     padding: 20px;
+}
+
+/* ********************BARE RECHERCHE********************** */
+.recherche {
+    text-align: right;
+}
+
+.txt {
+    padding: 6px;
+    border: 1px solid #002a5b4d;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    outline: none;
+    font-size: 16px;
+}
+
+.txt:hover {
+    background-color: #002a5b17;
 }

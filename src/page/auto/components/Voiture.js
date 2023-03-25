@@ -1,15 +1,37 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import DataCar from "../../../data/DataCar";
 import '../styles/voiture.css';
 
 
 function Voiture() {
-    const Data = DataCar();
+    const donner = DataCar();
+    const [data, setData] = useState([]);
+
+
+
+    useEffect(() => {
+        setData(DataCar);
+    }, []);
+
+
+    function onChangeload(change) {
+        let lower_text = change.toLowerCase()
+        return (
+            setData(donner.filter((e) => e.nom.toLowerCase().includes(lower_text)))
+        )
+    }
+
     return (
         <>
             <div className="body-voiture">
                 <div className="tableau">
+                    <div className="recherche">
+                        <input type="text" name="txt" id="txt" className="txt" placeholder="Recherche ... " onChange={(e) => onChangeload(e.target.value)} />
+                    </div>
+
                     <table>
+
                         <thead>
                             <tr className="tr-head">
                                 <th>Photo</th>
@@ -24,7 +46,8 @@ function Voiture() {
                             </tr>
                         </thead>
                         <tbody>
-                            {Data.map((e) => <tr className="table-contenue">
+
+                            {data.map((e) => <tr className="table-contenue" >
                                 <td>{e.photo}</td>
                                 <td>{e.categorie}</td>
                                 <td>{e.nom}</td>
@@ -46,6 +69,10 @@ function Voiture() {
                     </fieldset>
                 </div>
 
+            </div>
+
+            <div>
+                {4 === 8 ? <h1>pourquoi</h1> : <h1>fa naninona</h1>}
             </div>
         </>
     )

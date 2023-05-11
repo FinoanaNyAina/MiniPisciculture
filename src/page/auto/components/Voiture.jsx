@@ -7,26 +7,40 @@ import '../styles/voiture.css';
 function Voiture() {
     const donner = DataCar();
     const [data, setData] = useState([]);
+    const [affiche, setAffiche] = useState([]);
 
 
 
     useEffect(() => {
         setData(DataCar);
     }, []);
+    useEffect(() => {
+        setAffiche(affiche)
+    }, [affiche]);
 
 
-    function onChangeload(change) {
-        let lower_text = change.toLowerCase()
-        return (
-            setData(donner.filter((e) => e.nom.toLowerCase().includes(lower_text)))
-        )
+    const onChangeload = (change) => {
+        setData(donner.filter((e) => e.nom.toLowerCase().includes(change.toLowerCase())))
+    }
+
+    function onClickChange(click) {
+        setAffiche(donner.filter((f) => f.id.toString().includes(click)));
+
     }
 
     return (
         <>
             <div className="body-voiture">
                 <div className="tableau">
+                    <div>
+
+                    </div>
                     <div className="recherche">
+                        <select name="recherche" id="">
+                            <option value="categorie">Catégorie</option>
+                            <option value="nom">Nom</option>
+                            <option value="type">Type</option>
+                        </select>
                         <input type="text" name="txt" id="txt" className="txt" placeholder="Recherche ... " onChange={(e) => onChangeload(e.target.value)} />
                     </div>
 
@@ -47,7 +61,7 @@ function Voiture() {
                         </thead>
                         <tbody>
 
-                            {data.map((e) => <tr className="table-contenue" >
+                            {data.map((e) => <tr className="table-contenue" onClick={() => onClickChange(e.id)} >
                                 <td>{e.photo}</td>
                                 <td>{e.categorie}</td>
                                 <td>{e.nom}</td>
@@ -65,15 +79,16 @@ function Voiture() {
                 <div className="historique">
                     <fieldset>
                         <legend>Historique des voiture</legend>
-                        <p className="historiqueP">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique accusantium repellendus ratione architecto consectetur unde earum porro quaerat, est aspernatur sequi natus debitis ullam laudantium magnam velit libero atque! Adipisci beatae maxime possimus repudiandae obcaecati sed nemo placeat, dolore itaque ducimus rem, molestiae laboriosam rerum at expedita eum architecto necessitatibus? </p>
+                        {affiche.map((m) => <p className="historiqueP"> {m.nom} </p>)}
+                        {affiche.map((m) => <p className="historiqueP"> {m.categorie} </p>)}
+                        {affiche.map((m) => <p className="historiqueP"> {m.type} </p>)}
+                        {affiche.map((m) => <p className="historiqueP"> {m.charge} </p>)}
+                        {affiche.map((m) => <p className="historiqueP"> {m.consommation} </p>)}
                     </fieldset>
                 </div>
 
             </div>
 
-            <div>
-                {4 === 8 ? <h1>pourquoi</h1> : <h1>fa naninona</h1>}
-            </div>
         </>
     )
 }

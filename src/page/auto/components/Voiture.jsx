@@ -71,6 +71,7 @@ function Voiture() {
                                 <td>{e.vidange}</td>
                                 <td>{e.location}</td>
                                 <td>{e.chauffeur}</td>
+                                <td>poisson</td>
                             </tr>)}
 
                         </tbody>
